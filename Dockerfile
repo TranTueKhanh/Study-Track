@@ -7,21 +7,19 @@ RUN apt-get update && apt-get install -y \
     fluxbox \
     novnc \
     websockify \
-    libgl1-mesa-glx \
+    libgl1 \
     libglib2.0-0 \
     libqt5gui5 \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-# Copy toàn bộ file trong folder dự án vào container
 COPY . /app
 
-# Cài đặt các thư viện Python
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt || pip install --no-cache-dir -r scripts/requirements.txt
 
-# Cấp quyền thực thi cho file start.sh
-RUN chmod +x /app/start.sh
+EXPOSE 8080
 
-# Chạy script khởi động khi Container bật
-CMD ["/app/start.sh"]
+RUN chmod +x start.sh
+
+CMD ["./start.sh"]
