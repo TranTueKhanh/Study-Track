@@ -1,0 +1,1094 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>HistoryWindow</class>
+ <widget class="QMainWindow" name="HistoryWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>640</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1280</width>
+    <height>640</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Smart Study Tracker - History</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QMainWindow {
+    background-color: #FFF7F5;
+}
+
+QWidget {
+    font-family: &quot;Segoe UI&quot;;
+    color: #1F2933;
+    font-size: 13px;
+}
+
+QFrame#Sidebar {
+    background-color: #FFFFFF;
+    border-right: 1px solid #E5E7EB;
+}
+
+QFrame#TopBar {
+    background-color: transparent;
+    border: none;
+}
+
+QFrame#FilterCard,
+QFrame#HistoryTableCard,
+QFrame#PreviewCard,
+QFrame#InsightCard,
+QFrame#ActionCard,
+QFrame#SidebarStatusCard {
+    background-color: #FFFFFF;
+    border: 1px solid #EEF2F7;
+    border-radius: 22px;
+}
+
+QFrame#FilterCard:hover,
+QFrame#HistoryTableCard:hover,
+QFrame#PreviewCard:hover,
+QFrame#InsightCard:hover,
+QFrame#SidebarStatusCard:hover,
+QFrame#ActionCard:hover {
+    border: 1px solid #FFD0D0;
+}
+
+QPushButton {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 14px;
+    padding: 8px 12px;
+    color: #1F2933;
+}
+
+QPushButton:hover {
+    background-color: #FFF1F1;
+    border: 1px solid #FF6B6B;
+}
+
+QPushButton:pressed {
+    background-color: #FFE4E4;
+}
+
+QPushButton#BtnHistory {
+    background-color: #FFF1F1;
+    border: 1px solid #FFBDBD;
+    color: #C94A4A;
+    font-weight: 700;
+}
+
+QPushButton#BtnDashboard,
+QPushButton#BtnSession,
+QPushButton#BtnHistory,
+QPushButton#BtnEditRecord,
+QPushButton#BtnStats,
+QPushButton#BtnProfile {
+    text-align: left;
+    padding-left: 18px;
+    min-height: 46px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 18px;
+}
+
+QPushButton#btnAddNewRecord {
+    background-color: #FF6B6B;
+    color: #FFFFFF;
+    border: none;
+    font-size: 14px;
+    font-weight: 800;
+    border-radius: 16px;
+}
+
+QPushButton#btnAddNewRecord:hover {
+    background-color: #E85A5A;
+}
+
+QPushButton#btnClearFilter {
+    background-color: #FFFFFF;
+    color: #EF4444;
+    border: 1px solid #FECACA;
+    font-weight: 600;
+    border-radius: 16px;
+}
+
+QPushButton#btnEditSelected {
+    background-color: #F97316;
+    color: #FFFFFF;
+    border: none;
+    font-weight: 800;
+    border-radius: 16px;
+}
+
+QPushButton#btnEditSelected:hover {
+    background-color: #EA580C;
+}
+
+QPushButton#btnDeleteSelected {
+    background-color: #FEF2F2;
+    color: #EF4444;
+    border: 1px solid #FECACA;
+    font-weight: 800;
+    border-radius: 16px;
+}
+
+QPushButton#btnDeleteSelected:hover,
+QPushButton#btnClearFilter:hover {
+    background-color: #FEE2E2;
+    border: 1px solid #EF4444;
+}
+
+QPushButton#BtnBell,
+QPushButton#BtnAvatar {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 18px;
+    font-size: 16px;
+}
+
+QPushButton#BtnBell:hover,
+QPushButton#BtnAvatar:hover {
+    background-color: #FFF1F1;
+}
+
+QLabel#lblSidebarStatusTitle,
+QLabel#lblSidebarStatusValue,
+QLabel#lblSidebarStatusSub {
+    background: transparent;
+    border: none;
+}
+
+QLabel#lblSidebarAppTitle {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+QLabel#lblSidebarSubTitle {
+    color: #94A3B8;
+    font-size: 11px;
+}
+
+QLabel#lblSectionMenu,
+QLabel#lblSectionStatus {
+    color: #9CA3AF;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+QLabel#lblGreeting {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+QLabel#lblDateToday {
+    color: #9CA3AF;
+    font-size: 12px;
+}
+
+QLabel#lblFilterTitle,
+QLabel#lblHistoryTitle,
+QLabel#lblPreviewTitle,
+QLabel#lblInsightTitle,
+QLabel#lblActionTitle {
+    color: #6B7280;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+QLabel#lblSearch,
+QLabel#lblFilterSubject,
+QLabel#lblSortBy,
+QLabel#lblDateFrom,
+QLabel#lblDateTo {
+    color: #374151;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+QLabel#lblPreviewSubject {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1F2933;
+}
+
+QLabel#lblPreviewMeta,
+QLabel#lblPreviewContent,
+QLabel#lblInsightBody,
+QLabel#lblActionHint,
+QLabel#lblRecordCount {
+    color: #6B7280;
+    font-size: 12px;
+}
+
+QLabel#lblPreviewBadge {
+    background-color: #ECFDF5;
+    color: #059669;
+    border: 1px solid #CFF8E3;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    padding-left: 8px;
+}
+
+QLineEdit,
+QComboBox,
+QDateEdit {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 14px;
+    padding: 8px 10px;
+    color: #1F2933;
+}
+
+QLineEdit:focus,
+QComboBox:focus,
+QDateEdit:focus {
+    border: 1px solid #FF6B6B;
+    background-color: #FFFBFB;
+}
+
+QComboBox::drop-down,
+QDateEdit::drop-down {
+    border: none;
+    width: 24px;
+}
+
+QTableWidget {
+    background-color: transparent;
+    border: none;
+    gridline-color: #F3F4F6;
+    selection-background-color: #FFF1F1;
+    selection-color: #1F2933;
+    outline: 0;
+}
+
+QHeaderView::section {
+    background-color: #F9FAFB;
+    color: #6B7280;
+    border: none;
+    border-bottom: 1px solid #E5E7EB;
+    padding: 8px;
+    font-weight: 800;
+    font-size: 12px;
+}
+
+QTableWidget::item {
+    padding: 8px;
+    border-bottom: 1px solid #F3F4F6;
+}
+
+QTableWidget::item:hover {
+    background-color: #FFF7F7;
+}
+
+QScrollBar:vertical {
+    background: #F9FAFB;
+    width: 8px;
+    margin: 0px;
+    border-radius: 4px;
+}
+
+QScrollBar::handle:vertical {
+    background: #FFD0D0;
+    border-radius: 4px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #FFBDBD;
+}
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="Sidebar">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>240</width>
+      <height>640</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="lblSidebarLogo">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>24</y>
+       <width>56</width>
+       <height>56</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:#FFF1F1; border:1px solid #FFD6D6; border-radius:18px; font-size:24px; font-weight:700; color:#FF6B6B;</string>
+     </property>
+     <property name="text">
+      <string>📚</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblSidebarAppTitle">
+     <property name="geometry">
+      <rect>
+       <x>92</x>
+       <y>28</y>
+       <width>130</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Smart Study</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblSidebarSubTitle">
+     <property name="geometry">
+      <rect>
+       <x>92</x>
+       <y>54</y>
+       <width>120</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>History / List</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblSectionMenu">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>120</y>
+       <width>120</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>MAIN MENU</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnDashboard">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>142</y>
+       <width>200</width>
+       <height>64</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>🏠  Dashboard</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnSession">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>194</y>
+       <width>200</width>
+       <height>64</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>⏱  Study Session</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnHistory">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>246</y>
+       <width>200</width>
+       <height>64</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>📜  History</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnEditRecord">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>298</y>
+       <width>200</width>
+       <height>64</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>➕  Edit Record</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnStats">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>350</y>
+       <width>200</width>
+       <height>64</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>📊  Statistics</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnProfile">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>402</y>
+       <width>200</width>
+       <height>64</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>👤  Profile &amp; Settings</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblSectionStatus">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>470</y>
+       <width>120</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>LIST STATUS</string>
+     </property>
+    </widget>
+    <widget class="QFrame" name="SidebarStatusCard">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>496</y>
+       <width>200</width>
+       <height>110</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #FFF7F7;</string>
+     </property>
+     <widget class="QLabel" name="lblSidebarStatusTitle">
+      <property name="geometry">
+       <rect>
+        <x>16</x>
+        <y>14</y>
+        <width>150</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:#6B7280; font-size:11px; font-weight:700;</string>
+      </property>
+      <property name="text">
+       <string>Total records</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblSidebarStatusValue">
+      <property name="geometry">
+       <rect>
+        <x>16</x>
+        <y>34</y>
+        <width>140</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size:22px; font-weight:800; color:#1F2933;</string>
+      </property>
+      <property name="text">
+       <string>24</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblSidebarStatusSub">
+      <property name="geometry">
+       <rect>
+        <x>16</x>
+        <y>66</y>
+        <width>168</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:#6B7280; font-size:11px;</string>
+      </property>
+      <property name="text">
+       <string>Search, filter, edit or delete study records.</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="TopBar">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>14</y>
+      <width>990</width>
+      <height>58</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="lblGreeting">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>360</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Study History</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblDateToday">
+     <property name="geometry">
+      <rect>
+       <x>2</x>
+       <y>38</y>
+       <width>500</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>View, search, filter, sort, edit, and delete study records</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnAddNewRecord">
+     <property name="geometry">
+      <rect>
+       <x>708</x>
+       <y>8</y>
+       <width>160</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>+ Add record</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnBell">
+     <property name="geometry">
+      <rect>
+       <x>880</x>
+       <y>8</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>🔔</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnAvatar">
+     <property name="geometry">
+      <rect>
+       <x>930</x>
+       <y>8</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>👤</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="FilterCard">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>82</y>
+      <width>990</width>
+      <height>118</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="lblFilterTitle">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>16</y>
+       <width>160</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>FILTER &amp; SEARCH</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblSearch">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>46</y>
+       <width>100</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Search</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txtSearchRecord">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>66</y>
+       <width>220</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>Search by subject or content...</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblFilterSubject">
+     <property name="geometry">
+      <rect>
+       <x>264</x>
+       <y>46</y>
+       <width>100</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Subject</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="cmbFilterSubject">
+     <property name="geometry">
+      <rect>
+       <x>264</x>
+       <y>66</y>
+       <width>150</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>All subjects</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Toán</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Tiếng Anh</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Vật Lý</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Hóa</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Python</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="lblSortBy">
+     <property name="geometry">
+      <rect>
+       <x>434</x>
+       <y>46</y>
+       <width>100</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Sort by</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="cmbSortBy">
+     <property name="geometry">
+      <rect>
+       <x>434</x>
+       <y>66</y>
+       <width>150</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Newest first</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Oldest first</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Duration high</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Effectiveness high</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="lblDateFrom">
+     <property name="geometry">
+      <rect>
+       <x>604</x>
+       <y>46</y>
+       <width>100</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>From date</string>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="dateFromPicker">
+     <property name="geometry">
+      <rect>
+       <x>604</x>
+       <y>66</y>
+       <width>120</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblDateTo">
+     <property name="geometry">
+      <rect>
+       <x>744</x>
+       <y>46</y>
+       <width>100</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>To date</string>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="dateToPicker">
+     <property name="geometry">
+      <rect>
+       <x>744</x>
+       <y>66</y>
+       <width>120</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnClearFilter">
+     <property name="geometry">
+      <rect>
+       <x>884</x>
+       <y>66</y>
+       <width>82</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Clear</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="HistoryTableCard">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>218</y>
+      <width>701</width>
+      <height>266</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="lblHistoryTitle">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>14</y>
+       <width>160</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>STUDY RECORDS</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblRecordCount">
+     <property name="geometry">
+      <rect>
+       <x>520</x>
+       <y>14</y>
+       <width>150</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Showing 24 records</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QTableWidget" name="tblStudyRecords">
+     <property name="geometry">
+      <rect>
+       <x>6</x>
+       <y>42</y>
+       <width>691</width>
+       <height>206</height>
+      </rect>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>false</bool>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+     <property name="columnCount">
+      <number>7</number>
+     </property>
+     <attribute name="horizontalHeaderVisible">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <column>
+      <property name="text">
+       <string>Date</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Subject</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Content</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Duration</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Effectiveness</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Mood</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Action</string>
+      </property>
+     </column>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="PreviewCard">
+    <property name="geometry">
+     <rect>
+      <x>982</x>
+      <y>218</y>
+      <width>268</width>
+      <height>178</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="lblPreviewTitle">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>18</y>
+       <width>160</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>SELECTED RECORD</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblPreviewSubject">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>44</y>
+       <width>220</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Toán</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblPreviewMeta">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>220</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>18/04/2026 • 45 min • 😊 Good</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblPreviewContent">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>106</y>
+       <width>220</width>
+       <height>38</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Review quadratic equations and finish chapter 2 exercises.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblPreviewBadge">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>148</y>
+       <width>120</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>View only</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="ActionCard">
+    <property name="geometry">
+     <rect>
+      <x>982</x>
+      <y>414</y>
+      <width>268</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <widget class="QPushButton" name="btnEditSelected">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>18</y>
+       <width>108</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Edit</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnDeleteSelected">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>18</y>
+       <width>108</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Delete</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="InsightCard">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>502</y>
+      <width>990</width>
+      <height>112</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="lblInsightTitle">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>14</y>
+       <width>160</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>HISTORY INSIGHT</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblInsightBody">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>720</width>
+       <height>44</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>👉 In the last 7 days, Toán took 42% of your study time. English is still 20% below the weekly goal, so add 30–40 minutes in the next session.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblActionHint">
+     <property name="geometry">
+      <rect>
+       <x>770</x>
+       <y>40</y>
+       <width>190</width>
+       <height>44</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:#FFF7ED; color:#EA580C; border:1px solid #FED7AA; border-radius:14px; padding-left:10px; padding-right:10px; font-size:12px; font-weight:600;</string>
+     </property>
+     <property name="text">
+      <string>Edit opens the selected record with the old data pre-filled.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

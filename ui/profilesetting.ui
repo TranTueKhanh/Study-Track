@@ -1,0 +1,1334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ProfileWindow</class>
+ <widget class="QMainWindow" name="ProfileWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>640</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1280</width>
+    <height>640</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Smart Study Tracker - Profile &amp; Settings</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QMainWindow {
+    background-color: #FFF7F5;
+}
+
+QWidget {
+    font-family: &quot;Segoe UI&quot;;
+    color: #1F2933;
+    font-size: 13px;
+}
+
+QFrame#Sidebar {
+    background-color: #FFFFFF;
+    border-right: 1px solid #E5E7EB;
+}
+
+QFrame#TopBar {
+    background-color: transparent;
+    border: none;
+}
+
+QFrame#ProfileCard,
+QFrame#GoalSettingsCard,
+QFrame#SubjectGoalCard,
+QFrame#PreferencesCard,
+QFrame#DataActionCard,
+QFrame#AccountActionCard,
+QFrame#SidebarStatusCard {
+    background-color: #FFFFFF;
+    border: 1px solid #EEF2F7;
+    border-radius: 22px;
+}
+
+QFrame#ProfileCard:hover,
+QFrame#GoalSettingsCard:hover,
+QFrame#SubjectGoalCard:hover,
+QFrame#PreferencesCard:hover,
+QFrame#DataActionCard:hover,
+QFrame#SidebarStatusCard:hover,
+QFrame#AccountActionCard:hover {
+    border: 1px solid #FFD0D0;
+}
+
+QPushButton {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 14px;
+    padding: 8px 12px;
+    color: #1F2933;
+}
+
+QPushButton:hover {
+    background-color: #FFF1F1;
+    border: 1px solid #FF6B6B;
+}
+
+QPushButton:pressed {
+    background-color: #FFE4E4;
+}
+
+QPushButton#BtnProfile {
+    background-color: #FFF1F1;
+    border: 1px solid #FFBDBD;
+    color: #C94A4A;
+    font-weight: 700;
+}
+
+QPushButton#BtnDashboard,
+QPushButton#BtnSession,
+QPushButton#BtnHistory,
+QPushButton#BtnEditRecord,
+QPushButton#BtnStats,
+QPushButton#BtnProfile {
+    text-align: left;
+    padding-left: 18px;
+    min-height: 46px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 18px;
+}
+
+QPushButton#btnSaveProfile,
+QPushButton#btnSaveGoals,
+QPushButton#btnSavePreferences {
+    background-color: #22C55E;
+    color: #FFFFFF;
+    border: none;
+    font-weight: 800;
+    border-radius: 16px;
+}
+
+QPushButton#btnSaveProfile:hover,
+QPushButton#btnSaveGoals:hover,
+QPushButton#btnSavePreferences:hover {
+    background-color: #16A34A;
+}
+
+QPushButton#btnExportData,
+QPushButton#btnImportData {
+    background-color: #FFFFFF;
+    color: #F97316;
+    border: 1px solid #FED7AA;
+    font-weight: 800;
+    border-radius: 16px;
+}
+
+QPushButton#btnExportData:hover,
+QPushButton#btnImportData:hover {
+    background-color: #FFF7ED;
+    border: 1px solid #F97316;
+}
+
+QPushButton#btnLogout {
+    background-color: #FEF2F2;
+    color: #EF4444;
+    border: 1px solid #FECACA;
+    font-weight: 800;
+    border-radius: 16px;
+}
+
+QPushButton#btnLogout:hover {
+    background-color: #FEE2E2;
+    border: 1px solid #EF4444;
+}
+
+QPushButton#btnResetData {
+    background-color: #FFFFFF;
+    color: #EF4444;
+    border: 1px solid #FECACA;
+    font-weight: 700;
+    border-radius: 16px;
+}
+
+QPushButton#btnResetData:hover {
+    background-color: #EF4444;
+    color: #FFFFFF;
+    border: 1px solid #EF4444;
+}
+
+QPushButton#BtnBell,
+QPushButton#BtnAvatar {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 18px;
+    font-size: 16px;
+}
+
+QPushButton#BtnBell:hover,
+QPushButton#BtnAvatar:hover {
+    background-color: #FFF1F1;
+}
+
+QLabel#lblSidebarStatusTitle,
+QLabel#lblSidebarStatusValue,
+QLabel#lblSidebarStatusSub {
+    background: transparent;
+    border: none;
+}
+
+QLabel#lblSidebarAppTitle {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+QLabel#lblSidebarSubTitle {
+    color: #94A3B8;
+    font-size: 11px;
+}
+
+QLabel#lblSectionMenu,
+QLabel#lblSectionStatus {
+    color: #9CA3AF;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+QLabel#lblGreeting {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+QLabel#lblDateToday {
+    color: #9CA3AF;
+    font-size: 12px;
+}
+
+QLabel#lblProfileTitle,
+QLabel#lblGoalSettingsTitle,
+QLabel#lblSubjectGoalTitle,
+QLabel#lblPreferencesTitle,
+QLabel#lblDataActionTitle,
+QLabel#lblAccountActionTitle {
+    color: #6B7280;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+QLabel#lblProfileName {
+    font-size: 26px;
+    font-weight: 800;
+    color: #1F2933;
+}
+
+QLabel#lblProfileMeta,
+QLabel#lblTotalHoursSub,
+QLabel#lblBestStreakSub,
+QLabel#lblDailyGoalHint,
+QLabel#lblSubjectGoalHint,
+QLabel#lblPreferenceHint,
+QLabel#lblDataActionHint,
+QLabel#lblAccountHint {
+    color: #6B7280;
+    font-size: 12px;
+}
+
+QLabel#lblTotalHoursValue,
+QLabel#lblBestStreakValue {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1F2933;
+}
+
+QLabel#lblInputDisplayName,
+QLabel#lblInputDailyGoal,
+QLabel#lblInputDefaultSession,
+QLabel#lblMathGoal,
+QLabel#lblEnglishGoal,
+QLabel#lblPhysicsGoal,
+QLabel#lblThemeMode,
+QLabel#lblNotificationMode {
+    color: #374151;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+QLineEdit,
+QComboBox,
+QSpinBox {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 14px;
+    padding: 8px 10px;
+    color: #1F2933;
+}
+
+QLineEdit:focus,
+QComboBox:focus,
+QSpinBox:focus {
+    border: 1px solid #FF6B6B;
+    background-color: #FFFBFB;
+}
+
+QComboBox::drop-down {
+    border: none;
+    width: 24px;
+}
+
+QCheckBox {
+    color: #374151;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+}
+
+QProgressBar {
+    border: none;
+    background-color: #F3F4F6;
+    border-radius: 10px;
+    text-align: center;
+    color: #1F2933;
+    height: 12px;
+}
+
+QProgressBar::chunk {
+    background-color: #FF6B6B;
+    border-radius: 10px;
+}
+
+QLabel#lblProfileBadge {
+    background-color: #ECFDF5;
+    color: #059669;
+    border: 1px solid #CFF8E3;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    padding-left: 8px;
+}
+
+QLabel#lblGoalBadge {
+    background-color: #FFF7ED;
+    color: #EA580C;
+    border: 1px solid #FED7AA;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    padding-left: 8px;
+}
+
+QLabel#lblDangerBadge {
+    background-color: #FEF2F2;
+    color: #EF4444;
+    border: 1px solid #FECACA;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    padding-left: 8px;
+}
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="Sidebar">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>240</width>
+      <height>640</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="lblSidebarLogo">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>24</y>
+       <width>56</width>
+       <height>56</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:#FFF1F1; border:1px solid #FFD6D6; border-radius:18px; font-size:24px; font-weight:700; color:#FF6B6B;</string>
+     </property>
+     <property name="text">
+      <string>📚</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblSidebarAppTitle">
+     <property name="geometry">
+      <rect>
+       <x>92</x>
+       <y>28</y>
+       <width>130</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Smart Study</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblSidebarSubTitle">
+     <property name="geometry">
+      <rect>
+       <x>92</x>
+       <y>54</y>
+       <width>130</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Profile Settings</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblSectionMenu">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>120</y>
+       <width>120</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>MAIN MENU</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnDashboard">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>142</y>
+       <width>200</width>
+       <height>64</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>🏠  Dashboard</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnSession">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>194</y>
+       <width>200</width>
+       <height>64</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>⏱  Study Session</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnHistory">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>246</y>
+       <width>200</width>
+       <height>64</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>📜  History</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnEditRecord">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>298</y>
+       <width>200</width>
+       <height>64</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>➕  Edit Record</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnStats">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>350</y>
+       <width>200</width>
+       <height>64</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>📊  Statistics</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnProfile">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>402</y>
+       <width>200</width>
+       <height>64</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>👤  Profile &amp; Settings</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblSectionStatus">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>470</y>
+       <width>120</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>ACCOUNT STATUS</string>
+     </property>
+    </widget>
+    <widget class="QFrame" name="SidebarStatusCard">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>496</y>
+       <width>200</width>
+       <height>110</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #FFF7F7;</string>
+     </property>
+     <widget class="QLabel" name="lblSidebarStatusTitle">
+      <property name="geometry">
+       <rect>
+        <x>16</x>
+        <y>14</y>
+        <width>150</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:#6B7280; font-size:11px; font-weight:700;</string>
+      </property>
+      <property name="text">
+       <string>Current user</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblSidebarStatusValue">
+      <property name="geometry">
+       <rect>
+        <x>16</x>
+        <y>34</y>
+        <width>150</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size:22px; font-weight:800; color:#1F2933;</string>
+      </property>
+      <property name="text">
+       <string>Khanh</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblSidebarStatusSub">
+      <property name="geometry">
+       <rect>
+        <x>16</x>
+        <y>66</y>
+        <width>168</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:#6B7280; font-size:11px;</string>
+      </property>
+      <property name="text">
+       <string>Goals and settings are saved in settings.json.</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="TopBar">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>14</y>
+      <width>990</width>
+      <height>58</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="lblGreeting">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>420</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Profile &amp; Settings</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblDateToday">
+     <property name="geometry">
+      <rect>
+       <x>2</x>
+       <y>38</y>
+       <width>560</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Manage personal info, study goals, interface settings, and JSON data</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnBell">
+     <property name="geometry">
+      <rect>
+       <x>880</x>
+       <y>8</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>🔔</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnAvatar">
+     <property name="geometry">
+      <rect>
+       <x>930</x>
+       <y>8</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>👤</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="ProfileCard">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>82</y>
+      <width>430</width>
+      <height>190</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="lblProfileTitle">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>18</y>
+       <width>160</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>USER PROFILE</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblAvatarLarge">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>50</y>
+       <width>78</width>
+       <height>78</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:#FFF1F1; border:1px solid #FFD6D6; border-radius:28px; font-size:34px; font-weight:700; color:#FF6B6B;</string>
+     </property>
+     <property name="text">
+      <string>👤</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblProfileName">
+     <property name="geometry">
+      <rect>
+       <x>122</x>
+       <y>48</y>
+       <width>220</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Tran Tue Khanh</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblProfileMeta">
+     <property name="geometry">
+      <rect>
+       <x>124</x>
+       <y>84</y>
+       <width>250</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Joined on: 18/04/2026</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblProfileBadge">
+     <property name="geometry">
+      <rect>
+       <x>124</x>
+       <y>112</y>
+       <width>150</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Active learner</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblInputDisplayName">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>146</y>
+       <width>120</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Display name</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txtDisplayName">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>140</y>
+       <width>190</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Khanh</string>
+     </property>
+     <property name="placeholderText">
+      <string>Enter display name...</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnSaveProfile">
+     <property name="geometry">
+      <rect>
+       <x>324</x>
+       <y>140</y>
+       <width>82</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Save</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="GoalSettingsCard">
+    <property name="geometry">
+     <rect>
+      <x>708</x>
+      <y>82</y>
+      <width>542</width>
+      <height>190</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="lblGoalSettingsTitle">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>18</y>
+       <width>180</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>DAILY GOAL SETTINGS</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblInputDailyGoal">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>52</y>
+       <width>140</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Daily goal</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="spinDailyGoalMinutes">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>74</y>
+       <width>170</width>
+       <height>36</height>
+      </rect>
+     </property>
+     <property name="suffix">
+      <string> min</string>
+     </property>
+     <property name="minimum">
+      <number>30</number>
+     </property>
+     <property name="maximum">
+      <number>600</number>
+     </property>
+     <property name="singleStep">
+      <number>15</number>
+     </property>
+     <property name="value">
+      <number>240</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblInputDefaultSession">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>52</y>
+       <width>160</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Default session length</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="spinDefaultSessionLength">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>74</y>
+       <width>170</width>
+       <height>36</height>
+      </rect>
+     </property>
+     <property name="suffix">
+      <string> min</string>
+     </property>
+     <property name="minimum">
+      <number>15</number>
+     </property>
+     <property name="maximum">
+      <number>180</number>
+     </property>
+     <property name="singleStep">
+      <number>5</number>
+     </property>
+     <property name="value">
+      <number>45</number>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnSaveGoals">
+     <property name="geometry">
+      <rect>
+       <x>414</x>
+       <y>74</y>
+       <width>104</width>
+       <height>36</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Save Goal</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblDailyGoalHint">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>128</y>
+       <width>350</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>This goal is used to calculate Dashboard progress and compare results in Statistics.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblGoalBadge">
+     <property name="geometry">
+      <rect>
+       <x>414</x>
+       <y>132</y>
+       <width>104</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>4h / day</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="SubjectGoalCard">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>290</y>
+      <width>430</width>
+      <height>160</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="lblSubjectGoalTitle">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>16</y>
+       <width>180</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>SUBJECT GOALS</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblMathGoal">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>41</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Toán</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txtMathGoal">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>40</y>
+       <width>141</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>300</string>
+     </property>
+     <property name="placeholderText">
+      <string>Enter minutes</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblMathUnit">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>40</y>
+       <width>80</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#6B7280; font-size:12px;</string>
+     </property>
+     <property name="text">
+      <string>min/week</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblEnglishGoal">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>61</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Tiếng Anh</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txtEnglishGoal">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>80</y>
+       <width>141</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>240</string>
+     </property>
+     <property name="placeholderText">
+      <string>Enter minutes</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblEnglishUnit">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>80</y>
+       <width>80</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#6B7280; font-size:12px;</string>
+     </property>
+     <property name="text">
+      <string>min/week</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblPhysicsGoal">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>50</y>
+       <width>41</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Vật Lý</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="txtPhysicsGoal">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>40</y>
+       <width>141</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>210</string>
+     </property>
+     <property name="placeholderText">
+      <string>Enter minutes</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblPhysicsUnit">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>40</y>
+       <width>80</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:#6B7280; font-size:12px;</string>
+     </property>
+     <property name="text">
+      <string>min/week</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblSubjectGoalHint">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>122</y>
+       <width>360</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Statistics uses subject goals to detect study imbalance.</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnAddSubject">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>80</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>+ Add Subject</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="PreferencesCard">
+    <property name="geometry">
+     <rect>
+      <x>708</x>
+      <y>290</y>
+      <width>262</width>
+      <height>160</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="lblPreferencesTitle">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>16</y>
+       <width>160</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>PREFERENCES</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblThemeMode">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>46</y>
+       <width>90</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Theme</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="cmbThemeMode">
+     <property name="geometry">
+      <rect>
+       <x>92</x>
+       <y>40</y>
+       <width>140</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Light</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Dark</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>System</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="lblNotificationMode">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>86</y>
+       <width>90</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Reminder</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="chkNotification">
+     <property name="geometry">
+      <rect>
+       <x>92</x>
+       <y>82</y>
+       <width>140</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Enable study reminders</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnSavePreferences">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>118</y>
+       <width>212</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Save Preferences</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="DataActionCard">
+    <property name="geometry">
+     <rect>
+      <x>988</x>
+      <y>290</y>
+      <width>262</width>
+      <height>160</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="lblDataActionTitle">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>16</y>
+       <width>160</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>DATA MANAGEMENT</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblDataActionHint">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>44</y>
+       <width>210</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Export or import study data from a JSON file.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnExportData">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>88</y>
+       <width>100</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Export</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnImportData">
+     <property name="geometry">
+      <rect>
+       <x>132</x>
+       <y>88</y>
+       <width>100</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Import</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblDataBadge">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>126</y>
+       <width>140</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>JSON supported</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="AccountActionCard">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>468</y>
+      <width>990</width>
+      <height>146</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="lblAccountActionTitle">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>16</y>
+       <width>180</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>ACCOUNT ACTIONS</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblAccountHint">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>46</y>
+       <width>540</width>
+       <height>38</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Account actions only affect the current login session or local data. Logout returns you to the Login screen.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnLogout">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>26</y>
+       <width>120</width>
+       <height>38</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Logout</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnResetData">
+     <property name="geometry">
+      <rect>
+       <x>838</x>
+       <y>26</y>
+       <width>120</width>
+       <height>38</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Reset Data</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblDangerBadge">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>82</y>
+       <width>180</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Use reset carefully</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

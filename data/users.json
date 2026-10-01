@@ -1,0 +1,29 @@
+[
+  {
+    "username": "Tuệ Khanh",
+    "password": "k12345",
+    "goal_minutes_per_day": 210,
+    "remember_me": false,
+    "display_name": "Tuệ Khanh",
+    "created_at": "2026-05-18T18:56:33",
+    "is_active": true
+  },
+  {
+    "username": "Trần Tuệ Khanh",
+    "password": "k12345",
+    "goal_minutes_per_day": 120,
+    "remember_me": false,
+    "display_name": "Trần Tuệ Khanh",
+    "created_at": "2026-05-24T10:51:35",
+    "is_active": true
+  },
+  {
+    "username": "Khanh",
+    "password": "K123456",
+    "goal_minutes_per_day": 150,
+    "remember_me": true,
+    "display_name": "Khanh",
+    "created_at": "2026-06-16T21:40:29",
+    "is_active": true
+  }
+]

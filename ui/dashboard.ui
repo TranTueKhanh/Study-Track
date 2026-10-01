@@ -1,0 +1,1183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DashboardWindow</class>
+ <widget class="QMainWindow" name="DashboardWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>640</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1280</width>
+    <height>640</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Smart Study Tracker - Dashboard</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QMainWindow {
+    background-color: #FFF7F5;
+}
+
+QWidget {
+    font-family: &quot;Segoe UI&quot;;
+    color: #1F2933;
+    font-size: 13px;
+}
+
+QFrame#Sidebar {
+    background-color: #FFFFFF;
+    border-right: 1px solid #E5E7EB;
+}
+
+QFrame#TopBar {
+    background-color: transparent;
+    border: none;
+}
+
+QFrame#HeroCard,
+QFrame#CardTodayTime,
+QFrame#CardWeekTime,
+QFrame#CardStreak,
+QFrame#CardTopSubject,
+QFrame#GoalCard,
+QFrame#RecentCard,
+QFrame#InsightCard,
+QFrame#MiniTipCard,
+QFrame#SidebarStatusCard {
+    background-color: #FFFFFF;
+    border: 1px solid #EEF2F7;
+    border-radius: 22px;
+}
+
+QFrame#HeroCard:hover,
+QFrame#CardTodayTime:hover,
+QFrame#CardWeekTime:hover,
+QFrame#CardStreak:hover,
+QFrame#CardTopSubject:hover,
+QFrame#GoalCard:hover,
+QFrame#RecentCard:hover,
+QFrame#InsightCard:hover,
+QFrame#SidebarStatusCard:hover,
+QFrame#MiniTipCard:hover {
+    border: 1px solid #FFD0D0;
+}
+
+QPushButton {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 14px;
+    padding: 8px 12px;
+    color: #1F2933;
+}
+
+QPushButton:hover {
+    background-color: #FFF1F1;
+    border: 1px solid #FF6B6B;
+}
+
+QPushButton:pressed {
+    background-color: #FFE4E4;
+}
+
+QPushButton#BtnDashboard {
+    background-color: #FFF1F1;
+    border: 1px solid #FFBDBD;
+    color: #C94A4A;
+    font-weight: 700;
+}
+
+QPushButton#BtnStartSession {
+    background-color: #FF6B6B;
+    color: #FFFFFF;
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 16px;
+}
+
+QPushButton#BtnStartSession:hover {
+    background-color: #E85A5A;
+}
+
+QPushButton#BtnQuickAddRecord {
+    background-color: #FFFFFF;
+    color: #F97316;
+    border: 1px solid #FED7AA;
+    font-weight: 700;
+    border-radius: 16px;
+}
+
+QPushButton#BtnQuickAddRecord:hover {
+    background-color: #FFF7ED;
+    border: 1px solid #F97316;
+}
+
+QPushButton#BtnBell,
+QPushButton#BtnAvatar {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 18px;
+    font-size: 16px;
+}
+
+QPushButton#BtnBell:hover,
+QPushButton#BtnAvatar:hover {
+    background-color: #FFF1F1;
+}
+
+QPushButton#BtnDashboard,
+QPushButton#BtnSession,
+QPushButton#BtnHistory,
+QPushButton#BtnEditRecord,
+QPushButton#BtnStats,
+QPushButton#BtnProfile {
+    text-align: left;
+    padding-left: 18px;
+    min-height: 46px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 18px;
+}
+
+QLabel#lblSidebarStatusTitle,
+QLabel#lblSidebarStatusValue,
+QLabel#lblSidebarStatusSub {
+    background: transparent;
+    border: none;
+}
+
+QLabel#lblSidebarAppTitle {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+QLabel#lblSidebarSubTitle {
+    color: #94A3B8;
+    font-size: 11px;
+}
+
+QLabel#lblSectionMenu,
+QLabel#lblSectionStatus {
+    color: #9CA3AF;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+QLabel#lblGreeting {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+QLabel#lblDateToday {
+    color: #9CA3AF;
+    font-size: 12px;
+}
+
+QLabel#lblHeroEyebrow {
+    color: #F97316;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+QLabel#lblHeroTitle {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+QLabel#lblHeroSubtitle,
+QLabel#lblTodaySub,
+QLabel#lblWeekSub,
+QLabel#lblStreakSub,
+QLabel#lblTopSubjectSub,
+QLabel#lblGoalRemaining,
+QLabel#lblInsightBody,
+QLabel#lblMiniTipBody {
+    color: #6B7280;
+    font-size: 12px;
+}
+
+QLabel#lblCardTitleToday,
+QLabel#lblCardTitleWeek,
+QLabel#lblCardTitleStreak,
+QLabel#lblCardTitleTopSubject,
+QLabel#lblGoalTitle,
+QLabel#lblRecentTitle,
+QLabel#lblInsightTitle,
+QLabel#lblMiniTipTitle {
+    color: #6B7280;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+QLabel#lblTodayValue,
+QLabel#lblWeekValue,
+QLabel#lblStreakValue,
+QLabel#lblTopSubjectValue,
+QLabel#lblGoalProgressText {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+QProgressBar {
+    border: none;
+    background-color: #F3F4F6;
+    border-radius: 10px;
+    text-align: center;
+    color: #1F2933;
+    height: 12px;
+}
+
+QProgressBar::chunk {
+    background-color: #FF6B6B;
+    border-radius: 10px;
+}
+
+QListWidget {
+    background-color: transparent;
+    border: none;
+    outline: 0;
+}
+
+QListWidget::item {
+    background-color: #FFF7F7;
+    border: 1px solid #FDE2E2;
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 8px;
+}
+
+QListWidget::item:hover {
+    background-color: #FFF1F1;
+    border: 1px solid #FFCACA;
+}
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="Sidebar">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>240</width>
+      <height>640</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="lblSidebarLogo">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>24</y>
+       <width>56</width>
+       <height>56</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:#FFF1F1; border:1px solid #FFD6D6; border-radius:18px; font-size:24px; font-weight:700; color:#FF6B6B;</string>
+     </property>
+     <property name="text">
+      <string>📚</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblSidebarAppTitle">
+     <property name="geometry">
+      <rect>
+       <x>92</x>
+       <y>28</y>
+       <width>130</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Smart Study</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblSidebarSubTitle">
+     <property name="geometry">
+      <rect>
+       <x>92</x>
+       <y>54</y>
+       <width>120</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Tracker Dashboard</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblSectionMenu">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>120</y>
+       <width>120</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>MAIN MENU</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnDashboard">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>142</y>
+       <width>200</width>
+       <height>64</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>🏠  Dashboard</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnSession">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>194</y>
+       <width>200</width>
+       <height>64</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>⏱  Study Session</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnHistory">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>246</y>
+       <width>200</width>
+       <height>64</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>📜  History</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnEditRecord">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>298</y>
+       <width>200</width>
+       <height>64</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>➕  Edit Record</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnStats">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>350</y>
+       <width>200</width>
+       <height>64</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>📊  Statistics</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnProfile">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>402</y>
+       <width>200</width>
+       <height>64</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>👤  Profile &amp; Settings</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblSectionStatus">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>470</y>
+       <width>120</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>QUICK STATUS</string>
+     </property>
+    </widget>
+    <widget class="QFrame" name="SidebarStatusCard">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>496</y>
+       <width>200</width>
+       <height>110</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #FFF7F7;</string>
+     </property>
+     <widget class="QLabel" name="lblSidebarStatusTitle">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>120</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:#6B7280; font-size:11px; font-weight:700;</string>
+      </property>
+      <property name="text">
+       <string>Today Focus</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblSidebarStatusValue">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>140</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size:22px; font-weight:800; color:#1F2933;</string>
+      </property>
+      <property name="text">
+       <string>65%</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblSidebarStatusSub">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>30</y>
+        <width>101</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:#6B7280; font-size:11px;</string>
+      </property>
+      <property name="text">
+       <string>You are close to today's study goal.</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="BtnReviewPlan">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>70</y>
+        <width>168</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Review plan</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="TopBar">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>14</y>
+      <width>990</width>
+      <height>58</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="lblGreeting">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>320</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Hello Khanh</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblDateToday">
+     <property name="geometry">
+      <rect>
+       <x>2</x>
+       <y>38</y>
+       <width>260</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Saturday, 04/18/2026</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnBell">
+     <property name="geometry">
+      <rect>
+       <x>880</x>
+       <y>8</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>🔔</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnAvatar">
+     <property name="geometry">
+      <rect>
+       <x>930</x>
+       <y>8</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>👤</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="HeroCard">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>70</y>
+      <width>990</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="lblHeroEyebrow">
+     <property name="geometry">
+      <rect>
+       <x>28</x>
+       <y>22</y>
+       <width>160</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>SMART STUDY MODE</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblHeroTitle">
+     <property name="geometry">
+      <rect>
+       <x>28</x>
+       <y>38</y>
+       <width>480</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>What do you want to study today?</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblHeroSubtitle">
+     <property name="geometry">
+      <rect>
+       <x>28</x>
+       <y>74</y>
+       <width>540</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Start a focused session, track your progress, and turn study data into clearer insights every day.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnStartSession">
+     <property name="geometry">
+      <rect>
+       <x>28</x>
+       <y>108</y>
+       <width>180</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Start Session</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnQuickAddRecord">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>108</y>
+       <width>190</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>+ Quick Add Record</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblHeroBadge1">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>22</y>
+       <width>120</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:#FFF1F1; color:#C94A4A; border:1px solid #FFD7D7; border-radius:12px; font-size:11px; font-weight:700; padding-left:8px;</string>
+     </property>
+     <property name="text">
+      <string>Goal streak ↑</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblHeroBadge2">
+     <property name="geometry">
+      <rect>
+       <x>826</x>
+       <y>22</y>
+       <width>128</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:#ECFDF5; color:#059669; border:1px solid #CFF8E3; border-radius:12px; font-size:11px; font-weight:700; padding-left:8px;</string>
+     </property>
+     <property name="text">
+      <string>Focus score good</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblHeroSideTitle">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>54</y>
+       <width>160</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size:12px; color:#6B7280; font-weight:700;</string>
+     </property>
+     <property name="text">
+      <string>This week highlights</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblHeroSideBody">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>76</y>
+       <width>240</width>
+       <height>40</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size:12px; color:#6B7280;</string>
+     </property>
+     <property name="text">
+      <string>You reached your goal on 5/7 days, and Toán is still your most studied subject this week.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="CardTodayTime">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>236</y>
+      <width>236</width>
+      <height>110</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="lblCardTitleToday">
+     <property name="geometry">
+      <rect>
+       <x>22</x>
+       <y>18</y>
+       <width>100</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Today</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblTodayValue">
+     <property name="geometry">
+      <rect>
+       <x>22</x>
+       <y>42</y>
+       <width>120</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>2h 30m</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblTodaySub">
+     <property name="geometry">
+      <rect>
+       <x>22</x>
+       <y>84</y>
+       <width>180</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>+35 minutes vs yesterday</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblTodayIcon">
+     <property name="geometry">
+      <rect>
+       <x>188</x>
+       <y>18</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size:22px;</string>
+     </property>
+     <property name="text">
+      <string>⏰</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="CardWeekTime">
+    <property name="geometry">
+     <rect>
+      <x>514</x>
+      <y>236</y>
+      <width>236</width>
+      <height>110</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="lblCardTitleWeek">
+     <property name="geometry">
+      <rect>
+       <x>22</x>
+       <y>18</y>
+       <width>100</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>This week</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblWeekValue">
+     <property name="geometry">
+      <rect>
+       <x>22</x>
+       <y>42</y>
+       <width>120</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>11h 05m</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblWeekSub">
+     <property name="geometry">
+      <rect>
+       <x>22</x>
+       <y>84</y>
+       <width>180</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Average 1h 35m/day</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblWeekIcon">
+     <property name="geometry">
+      <rect>
+       <x>188</x>
+       <y>18</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size:22px;</string>
+     </property>
+     <property name="text">
+      <string>📅</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="CardStreak">
+    <property name="geometry">
+     <rect>
+      <x>768</x>
+      <y>236</y>
+      <width>236</width>
+      <height>110</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="lblCardTitleStreak">
+     <property name="geometry">
+      <rect>
+       <x>22</x>
+       <y>18</y>
+       <width>100</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Streak</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblStreakValue">
+     <property name="geometry">
+      <rect>
+       <x>22</x>
+       <y>42</y>
+       <width>120</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>6 days</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblStreakSub">
+     <property name="geometry">
+      <rect>
+       <x>22</x>
+       <y>84</y>
+       <width>180</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Best streak: 12 days</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblStreakIcon">
+     <property name="geometry">
+      <rect>
+       <x>188</x>
+       <y>18</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size:22px;</string>
+     </property>
+     <property name="text">
+      <string>🔥</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="CardTopSubject">
+    <property name="geometry">
+     <rect>
+      <x>1022</x>
+      <y>236</y>
+      <width>228</width>
+      <height>110</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="lblCardTitleTopSubject">
+     <property name="geometry">
+      <rect>
+       <x>22</x>
+       <y>18</y>
+       <width>120</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Top subject</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblTopSubjectValue">
+     <property name="geometry">
+      <rect>
+       <x>22</x>
+       <y>42</y>
+       <width>140</width>
+       <height>34</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Toán</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblTopSubjectSub">
+     <property name="geometry">
+      <rect>
+       <x>22</x>
+       <y>84</y>
+       <width>180</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Takes 42% of this week's time</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblTopSubjectIcon">
+     <property name="geometry">
+      <rect>
+       <x>182</x>
+       <y>18</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size:22px;</string>
+     </property>
+     <property name="text">
+      <string>📘</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="GoalCard">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>360</y>
+      <width>488</width>
+      <height>130</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="lblGoalTitle">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>20</y>
+       <width>120</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Daily goal</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblGoalProgressText">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>201</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>135 / 240 minutes</string>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="progressDailyGoal">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>438</width>
+       <height>14</height>
+      </rect>
+     </property>
+     <property name="value">
+      <number>56</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblGoalRemaining">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>100</y>
+       <width>260</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>105 minutes left to reach today's goal</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnViewStats">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>90</y>
+       <width>126</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>View stats</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="RecentCard">
+    <property name="geometry">
+     <rect>
+      <x>768</x>
+      <y>360</y>
+      <width>482</width>
+      <height>130</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="lblRecentTitle">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>20</y>
+       <width>140</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Recent activity</string>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="listRecentRecords">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>44</y>
+       <width>442</width>
+       <height>78</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="InsightCard">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>504</y>
+      <width>656</width>
+      <height>110</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="lblInsightTitle">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>160</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Study insight</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblInsightBody">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>600</width>
+       <height>38</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>👉 You have not studied Hóa for 3 days. English is still 20% below the weekly goal. Today, add 30–40 minutes for Hóa or English to rebalance your study rhythm.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnApplySuggestion">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>View insight</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="MiniTipCard">
+    <property name="geometry">
+     <rect>
+      <x>934</x>
+      <y>504</y>
+      <width>316</width>
+      <height>110</height>
+     </rect>
+    </property>
+    <widget class="QLabel" name="lblMiniTipTitle">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>160</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Focus tip</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblMiniTipBody">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>260</width>
+       <height>38</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>After 45 minutes of continuous study, take a 5-minute break to maintain better focus.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="BtnOpenSessionTip">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Open session</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

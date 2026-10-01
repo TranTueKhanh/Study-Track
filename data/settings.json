@@ -1,0 +1,18 @@
+{
+  "last_user": "Khanh",
+  "default_session_length": 40,
+  "subject_goals": {
+    "Văn": 120,
+    "Toán": 120,
+    "Tiếng Anh": 120,
+    "Vật Lý": 120,
+    "Lịch sử": 150,
+    "Địa lý": 80
+  },
+  "theme": "Light",
+  "reminder_enabled": true,
+  "hidden_subjects": [
+    "Hóa",
+    "Python"
+  ]
+}

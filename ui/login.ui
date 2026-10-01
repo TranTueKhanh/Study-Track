@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LoginWindow</class>
+ <widget class="QMainWindow" name="LoginWindow">
+  <property name="geometry">
+   <rect>
+    <x>24</x>
+    <y>24</y>
+    <width>430</width>
+    <height>640</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Login</string>
+  </property>
+
+  <!-- GLOBAL STYLE -->
+  <property name="styleSheet">
+   <string>
+    QMainWindow {
+      background-color: #FFF7F5;
+      color: #1F2933;
+    }
+    QLabel {
+      color: #1F2933;
+    }
+    QLineEdit {
+      background-color: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      border-radius: 14px;
+      padding: 14px;
+      color: #1F2933;
+      font-size: 13px;
+    }
+    QLineEdit:focus {
+      border: 2px solid #FF6B6B;
+    }
+    QPushButton {
+      background-color: #FFFFFF;
+      border-radius: 14px;
+      color: #1F2933;
+      font-size: 13px;
+    }
+    QPushButton:hover {
+      background-color: #FFF1F1;
+    }
+   </string>
+  </property>
+
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="RootLayout">
+
+    <!-- CARD -->
+    <item>
+     <widget class="QFrame" name="Card">
+      <property name="styleSheet">
+       <string>
+        QFrame {
+         background: #FFFFFF;
+         border-radius: 28px;
+        }
+       </string>
+      </property>
+
+      <layout class="QVBoxLayout" name="MainLayout">
+       <property name="spacing">
+        <number>22</number>
+       </property>
+
+       <!-- HEADER -->
+       <item>
+        <layout class="QVBoxLayout">
+         <property name="spacing">
+          <number>8</number>
+         </property>
+
+         <item>
+          <widget class="QLabel" name="IconUser">
+           <property name="minimumSize">
+            <size>
+             <width>72</width>
+             <height>72</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string>
+             QLabel {
+              background-color: rgba(255,107,107,0.15);
+              border-radius: 22px;
+              font-size: 30px;
+             }
+            </string>
+           </property>
+           <property name="text">
+            <string>📚</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+
+         <item>
+          <widget class="QLabel" name="Title">
+           <property name="styleSheet">
+            <string>font-size: 24px; font-weight: 700;</string>
+           </property>
+           <property name="text">
+            <string>Smart Study Tracker</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+
+         <item>
+          <widget class="QLabel" name="SubTitle">
+           <property name="styleSheet">
+            <string>color:#6B7280; font-size:12px;</string>
+           </property>
+           <property name="text">
+            <string>Track your study time and improve your habits</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+
+        </layout>
+       </item>
+
+       <!-- FORM -->
+       <item>
+        <layout class="QVBoxLayout">
+         <property name="spacing">
+          <number>18</number>
+         </property>
+
+         <item>
+          <widget class="QLineEdit" name="usernameInput">
+           <property name="placeholderText">
+            <string>👤  Enter your username</string>
+           </property>
+          </widget>
+         </item>
+
+         <item>
+          <widget class="QLineEdit" name="passwordInput">
+           <property name="echoMode">
+            <enum>QLineEdit::Password</enum>
+           </property>
+           <property name="placeholderText">
+            <string>🔒  Enter your password</string>
+           </property>
+          </widget>
+         </item>
+
+         <item>
+          <widget class="QPushButton" name="forgotBtn">
+           <property name="styleSheet">
+            <string>
+             QPushButton {
+              background: transparent;
+              color: #F97316;
+              font-size: 11px;
+              text-align: right;
+             }
+
+             QPushButton:hover {
+              color: #EA580C;
+              text-decoration: underline;
+             }
+
+             QPushButton:pressed {
+              color: #C2410C;
+              padding-top: 1px;
+             }
+            </string>
+           </property>
+           <property name="text">
+            <string>Forgot Password?</string>
+           </property>
+          </widget>
+         </item>
+
+        </layout>
+       </item>
+
+       <!-- ERROR -->
+       <item>
+        <widget class="QLabel" name="errorLabel">
+         <property name="visible">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string>color:#EF4444; font-size:11px;</string>
+         </property>
+         <property name="text">
+          <string>⛔ Invalid username or password. Please try again.</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+
+       <!-- ACTION -->
+       <item>
+        <widget class="QPushButton" name="loginBtn">
+         <property name="minimumHeight">
+          <number>48</number>
+         </property>
+         <property name="styleSheet">
+          <string>
+           QPushButton {
+            background-color: #FF6B6B;
+            font-weight: 700;
+            font-size: 14px;
+            color: #FFFFFF;
+           }
+           QPushButton:hover {
+            background-color: #E85A5A;
+           }
+           QPushButton:pressed {
+            background-color: #C94A4A;
+           }
+          </string>
+         </property>
+         <property name="text">
+          <string>Login ⮕</string>
+         </property>
+        </widget>
+       </item>
+
+       <item>
+        <widget class="QPushButton" name="registerBtn">
+         <property name="styleSheet">
+          <string>
+           QPushButton {
+            background: transparent;
+            color: #F97316;
+            font-size: 12px;
+           }
+
+           QPushButton:hover {
+            color: #EA580C;
+            text-decoration: underline;
+           }
+
+           QPushButton:pressed {
+            color: #C2410C;
+            padding-top: 1px;
+           }
+          </string>
+         </property>
+         <property name="text">
+          <string>Don't have an account? Register here</string>
+         </property>
+        </widget>
+       </item>
+
+      </layout>
+     </widget>
+    </item>
+
+   </layout>
+  </widget>
+
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
