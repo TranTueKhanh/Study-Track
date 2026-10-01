@@ -1,5 +1,6 @@
 FROM python:3.10-slim
 
+# Cài đặt các thư viện hệ thống cần thiết cho PyQt6, Xvfb, fluxbox và noVNC
 RUN apt-get update && apt-get install -y \
     xvfb \
     x11vnc \
@@ -11,6 +12,14 @@ RUN apt-get update && apt-get install -y \
     libqt5gui5 \
     libqt5widgets5 \
     libqt5core5a \
+    libxcb-cursor0 \
+    libxcb-xinerama0 \
+    libxcb-icccm4 \
+    libxcb-image0 \
+    libxcb-keysyms1 \
+    libxcb-render-util0 \
+    libxcb-shape0 \
+    libxkbcommon-x11-0 \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
