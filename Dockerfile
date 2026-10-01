@@ -1,6 +1,6 @@
 FROM python:3.10-slim
 
-# Cài đặt các thư viện hệ thống cần thiết cho PyQt6, Xvfb, fluxbox và noVNC
+# Cài đặt các thư viện hệ thống (giữ nguyên gói cũ + thêm bộ libxcb cần thiết cho PyQt6)
 RUN apt-get update && apt-get install -y \
     xvfb \
     x11vnc \
