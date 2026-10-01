@@ -1,6 +1,5 @@
 FROM python:3.10-slim
 
-# Cài đặt các thư viện hệ thống cần thiết cho PyQt, màn hình ảo Xvfb và noVNC
 RUN apt-get update && apt-get install -y \
     xvfb \
     x11vnc \
@@ -10,6 +9,8 @@ RUN apt-get update && apt-get install -y \
     libgl1 \
     libglib2.0-0 \
     libqt5gui5 \
+    libqt5widgets5 \
+    libqt5core5a \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
@@ -17,6 +18,9 @@ WORKDIR /app
 COPY . /app
 
 RUN pip install --no-cache-dir -r requirements.txt || pip install --no-cache-dir -r scripts/requirements.txt
+
+ENV DISPLAY=:99
+ENV QT_QPA_PLATFORM=xcb
 
 EXPOSE 8080
 

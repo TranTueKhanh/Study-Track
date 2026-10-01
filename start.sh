@@ -1,17 +1,17 @@
 #!/bin/bash
 
-# 1. Tạo màn hình ảo Virtual Framebuffer (độ phân giải 1280x720)
-Xvfb :99 -screen 0 1280x720x16 &
+# Khởi chạy màn hình ảo
+Xvfb :99 -screen 0 1280x1024x24 &
 export DISPLAY=:99
 
-# 2. Khởi chạy Window Manager nhẹ (Fluxbox)
+# Khởi chạy Window Manager
 fluxbox &
 
-# 3. Khởi chạy VNC Server kết nối vào màn hình ảo
-x11vnc -display :99 -forever -shared -nopw -rfbport 5900 &
+# Khởi chạy VNC Server
+x11vnc -forever -nopw -shared -rfbport 5900 -display :99 &
 
-# 4. Chạy ứng dụng PyQt của bạn (Sửa main.py thành file chạy chính của bạn nếu cần)
-python3 main.py &
+# Khởi chạy Websockify Proxy kết nối cổng 8080 tới VNC 5900
+websockify --web=/usr/share/novnc 8080 localhost:5900 &
 
-# 5. Mở websockify / noVNC trên cổng được cấp bởi Render ($PORT)
-websockify --web /usr/share/novnc $PORT localhost:5900
+# Khởi chạy ứng dụng PyQt
+python main.py
